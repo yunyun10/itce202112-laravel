@@ -34,6 +34,7 @@ Route::post('/task', function (Request $request) {
    );
    $task = new Task();
    $task->name = request('name');
+   $task->deadline = request('deadline');
    $task->save();
    return redirect('/');
 });

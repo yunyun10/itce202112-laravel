@@ -34,10 +34,18 @@
        @if (count($tasks) > 0)
        <table class="table table-striped">
          <tbody>
+             <tr>
+                 <th>タスク名</th>
+                 <th>締め切り</th>
+                 <th>作成日時</th>
+                 <th></th>
+                </tr>
            @foreach ($tasks as $task)
            <tr>
              <td>{{ $task->name }}</td>
+             <td>{{ $task->deadline }}</td>
              <td>{{ $task->created_at }}</td>
+
              <td>
                <form method="POST" action="{{ url('/task/' . $task->id) }}">
                  @csrf
