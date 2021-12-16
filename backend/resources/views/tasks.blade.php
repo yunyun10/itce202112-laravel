@@ -34,6 +34,7 @@
            @foreach ($tasks as $task)
            <tr>
              <td>{{ $task->name }}</td>
+             <td>{{ $task->created_at }}</td>
              <td>
                <form method="POST" action="{{ url('/task/' . $task->id) }}">
                  @csrf
