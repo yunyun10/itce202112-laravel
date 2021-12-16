@@ -16,10 +16,13 @@
        <form method="POST" action="{{ url('/task') }}">
          @csrf
          <div class="form-group">
+           <p>タスク名</p>
            <input type="text" name="name" class="form-control">
-           @if ($errors->has('name'))
+　　　　　　　@if ($errors->has('name'))
            <p class="text-danger">{{ $errors->first('name') }}</p>
            @endif
+           <p>締切</p>
+           <input type="date" name="deadline" class="form-control">
            <button type="submit" class="btn btn-outline-info mt-2"><i class="fas fa-plus fa-lg mr-2"></i>追加</button>
          </div>
        </form>

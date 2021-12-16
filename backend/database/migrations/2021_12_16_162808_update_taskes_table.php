@@ -14,7 +14,7 @@ class UpdateTaskesTable extends Migration
     public function up()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->time('deadline');
+            $table->date('deadline');
         });
     }
 
@@ -26,7 +26,7 @@ class UpdateTaskesTable extends Migration
     public function down()
     {
         Schema::table('tasks', function (Blueprint $table) {
-            $table->dropColumn('deadline');  
+            $table->dropColumn('deadline');
         });
     }
 }
