@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Models\Task;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,4 +43,11 @@ Route::post('/task', function (Request $request) {
 Route::delete('/task/{task}', function (Task $task) {
    $task->delete();
    return redirect('/');
+});
+
+Route::post('/complete', function (Request $request){
+    Task::where('id', $request->id)->update([
+    'is_completed' => 1
+    ]);
+    return redirect('/');
 });
