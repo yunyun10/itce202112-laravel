@@ -27,7 +27,6 @@
                         <input type="date" name="deadline" class="form-control">
                         <button type="submit" class="btn btn-outline-info mt-2"><i
                                 class="fas fa-plus fa-lg mr-2"></i>追加</button>
-                                
                     </div>
                 </form>
             </div>
@@ -44,6 +43,7 @@
                                 <th>作成日時</th>
                                 <th>完了ボタン</th>
                                 <th></th>
+                                <th></th>
                             </tr>
                             @foreach ($tasks as $task)
                                 <tr>
@@ -51,10 +51,17 @@
                                     <td>{{ $task->deadline }}</td>
                                     <td>{{ $task->created_at }}</td>
                                     <td>{{ $task->is_completed}}</td>
+
                                     <form method="POST" action="/complete">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $task->id }}">
-                                        <td>{{ $task->is_completed }}<button type="submit" name="add">完了</button></td>
+                                        <td>{{ $task->is_completed }}<button type="submit" name="add">
+
+                                         @if ($task->is_completed === 1)
+                                           完了
+                                         @elseif($task->is_completed  === 0)
+                                           未完了
+                                         @endif
                                         </button></td>
                                     </form>
                                     <td>
