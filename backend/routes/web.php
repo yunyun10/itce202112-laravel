@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Task;
 use Illuminate\Http\Request;
@@ -16,7 +17,15 @@ use Illuminate\Http\Request;
 |
 */
 
-/*Route::get('/', function () {
+Route::get('/',[TaskController::class, 'index']);
+Route::post('/task',[TaskController::class, 'create']);
+Route::delete('/task/{id}',[TaskController::class, 'delete']);
+Route::post('complete', )
+
+
+/*
+ここの部分書いた
+Route::get('/', function () {
     return view('tasks', [
         'tasks' => App\Models\Task::latest()->get()
     ]);
@@ -54,5 +63,4 @@ use Illuminate\Http\Request;
      $content->update(['is_completed' => 0]);
      }
      return redirect('/');
- });
-*/
+ });/*
