@@ -30,10 +30,15 @@
                     </div>
                 </form>
             </div>
-        </div>
+       </div>
         <div class="card">
-            <div class="card-header">タスク一覧</div>
-            <div class="card-body">
+            <div class="card-header">タスク一覧
+                {{--<form method="POST" action="/lists">
+                    @csrf
+                    <button type="submit" class="btn btn-outline-secondary" style="width: 100px;"> タスク完了一覧
+                    </button>--}}
+            </div>
+            <div class=" card-body">
                 @if (count($tasks) > 0)
                     <table class="table table-striped">
                         <tbody>
@@ -50,26 +55,26 @@
                                     <td>{{ $task->name }}</td>
                                     <td>{{ $task->deadline }}</td>
                                     <td>{{ $task->created_at }}</td>
-                                    <td>{{ $task->is_completed}}</td>
+                                    <td>{{ $task->is_completed }}</td>
 
                                     <form method="POST" action="/complete">
                                         @csrf
                                         <input type="hidden" name="id" value="{{ $task->id }}">
                                         <td>{{ $task->is_completed }}<button type="submit" name="add">
 
-                                         @if ($task->is_completed === 1)
-                                           完了
-                                         @elseif($task->is_completed  === 0)
-                                           未完了
-                                         @endif
-                                        </button></td>
+                                                @if ($task->is_completed === 1)
+                                                    完了
+                                                @elseif($task->is_completed === 0)
+                                                    未完了
+                                                @endif
+                                            </button></td>
                                     </form>
                                     <td>
                                         <form method="POST" action="{{ url('/task/' . $task->id) }}">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-outline-danger"
-                                                style="width: 100px;"><i class="far fa-trash-alt"></i> 削除</button>
+                                            style="width: 100px;"><i class="far fa-trash-alt"></i> 削除</button>
                                         </form>
                                     </td>
                                 </tr>
