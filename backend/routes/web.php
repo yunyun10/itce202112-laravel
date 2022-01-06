@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\RestController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Task;
@@ -18,9 +19,7 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/',[TaskController::class, 'index']);
-Route::post('/task',[TaskController::class, 'create']);
-Route::delete('/task/{id}',[TaskController::class, 'delete']);
-Route::post('complete', )
+Route::get('/calendar',[TaskController::class, 'show']);
 
 
 /*
@@ -63,4 +62,6 @@ Route::get('/', function () {
      $content->update(['is_completed' => 0]);
      }
      return redirect('/');
- });/*
+ });
+*/
+
