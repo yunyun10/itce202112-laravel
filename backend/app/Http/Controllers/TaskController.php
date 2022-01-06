@@ -6,5 +6,8 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    //
+   function index()
+   {
+       return view('tasks');
+   }
 }
