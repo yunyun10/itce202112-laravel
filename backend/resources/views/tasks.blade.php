@@ -19,12 +19,12 @@
             <form method="POST" action="/create">
                 @csrf
                 <div class="form-group">
-                    <input type="text" name="name" class="form-control" value="{{ old = 'name' }}"
+                    <input type="text" name="name" class="form-control" value="{{ old ('name') }}"
                         placeholder="タスク名">
                     @if ($errors->has('name'))
                         <p class="text-danger">{{ $errors->first('name') }}</p>
                     @endif
-                    <input type="text" name="deadline" class="form-control mt-3 w-5">
+                    <input type="datetime-local" name="deadline" class="form-control mt-3 w-5" placeholder="締め切り日">
                     @if ($errors->has('deadline'))
                         <p class="text-danger">{{ $errors->first('deadline') }}</p>
                     @endif
@@ -42,13 +42,6 @@
         @if (count($tasks) > 0)
             <table class="table table-striped">
                 <tbody>
-                    <thead>
-                        <tr>
-                            <td></td>
-                            <td>@sortablelink('deadline','並び替え')</td>
-                            <td>@sortablelink('created_at','並び替え')</td>
-                        </tr>
-                    </thead>
                     <tr>
                         <th>タスク名</th>
                         <th>期日</th>
@@ -61,24 +54,25 @@
                             <td>{{ $task->name }}</td>
                             <td>{{ $task->deadline }}</td>
                             <td>{{ $task->created_at }}</td>
-                            <td>
-                                <form action="/update_page">
-                                    @csrf
-                                    <input type="hidden" name="id" value="{{ $task->id }}">
-                                    <button type="submit" class="btn btn-outline-primary" style="width: 100px;">
-                                        更新</button>
-                                </form>
-                            </td>
+                            <td></td>
                             <td>
                                 <form method="POST" action="/complete">
                                     @csrf
                                     <input type="hidden" name="id" value="{{ $task->id }}">
-                                    <button type="submit" class="btn btn-outline-success" style="width: 100px;">完了</button>
+                                    <button type="submit" class="btn btn-outline-success"
+                                        style="width: 100px;">完了</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form method="POST" action="/delete">
+                                    @csrf
+                                    <input type="hidden" name="id" value="{{ $completed->id }}">
+                                    <button type="submit" name="delete" class="btn btn-outline-danger" onClick="delete_alert(event);return false;" style="width: 100px;"> 削除</button>
                                 </form>
                             </td>
                         </tr>
                     @endforeach
-                    
+
                 </tbody>
             </table>
         @endif
