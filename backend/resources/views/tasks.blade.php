@@ -19,7 +19,7 @@
             <form method="POST" action="/create">
                 @csrf
                 <div class="form-group">
-                    <input type="text" name="name" class="form-control" value="{{ old ('name') }}"
+                    <input type="text" name="name" class="form-control" value="{{ old('name') }}"
                         placeholder="タスク名">
                     @if ($errors->has('name'))
                         <p class="text-danger">{{ $errors->first('name') }}</p>
@@ -48,8 +48,26 @@
                         <th>作成日</th>
                         <th></th>
                         <th></th>
+                        <th></th>
                     </tr>
                     @foreach ($tasks as $task)
+                        @php
+                            $today = date('Y-m-d');
+                            $deadline = new Datetime($task->deadline);
+                            $today_datetime = new Datetime($today);
+                            if (isset($task->deadline)) {
+                                $dayDiff = $today_datetime->diff($deadline);
+                                if ($dayDiff->invert == 1) {
+                                    $task_color = 'bg-danger';
+                                } elseif ($dayDiff->format('%a') < 3) {
+                                    $task_color = 'bg-warning';
+                                } else {
+                                    $task_color = '';
+                                }
+                            } else {
+                                $task_color = '';
+                            }
+                        @endphp
                         <tr>
                             <td>{{ $task->name }}</td>
                             <td>{{ $task->deadline }}</td>
@@ -66,8 +84,9 @@
                             <td>
                                 <form method="POST" action="/delete">
                                     @csrf
-                                    <input type="hidden" name="id" value="{{ $completed->id }}">
-                                    <button type="submit" name="delete" class="btn btn-outline-danger" onClick="delete_alert(event);return false;" style="width: 100px;"> 削除</button>
+                                    <input type="hidden" name="id" value="{{ $task->id }}">
+                                    <button type="submit" name="delete" class="btn btn-outline-danger"
+                                        onClick="delete_alert(event);return false;" style="width: 100px;"> 削除</button>
                                 </form>
                             </td>
                         </tr>
