@@ -5,7 +5,7 @@
     <title>ToDoAPP</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top cont">
         <div class="container-fluid">
           <a class="navbar-brand" href="/">ToDoAPP</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +23,7 @@
                 <a class="nav-link" href="#">ダッシュボード</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">レポート</a>
               </li>
             </ul>
           </div>
@@ -32,7 +32,7 @@
 <div>
     @yield('content')
 </div>
-<footer>copy rights by ToDoApp</footer>
+<div id="footer" class="fixed-bottom">copy rights by ToDoApp</div>
 
 
 </body>
