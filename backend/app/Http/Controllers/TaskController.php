@@ -52,7 +52,6 @@ class TaskController extends Controller
             'name' => $request->name,
             'deadline' => $request->deadline
         ]);
-
-        return redirect('/tasks');
+        return redirect('/');
     }
-}
+    }
