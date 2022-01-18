@@ -61,4 +61,12 @@ class TaskController extends Controller
 
         return redirect('/tasks');
     }
+
+
+    public function sortBy ($created_at){
+
+        dd('here');
+    }
 }
+
+

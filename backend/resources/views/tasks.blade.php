@@ -10,6 +10,7 @@
     @extends('layout')
     @section('content')
     @stop
+    @livewireStyles
 </head>
 
 <body>
@@ -39,12 +40,22 @@
     <div class="card-header">タスク一覧</div>
     <div class="card-body">
         @if (count($tasks) > 0)
-            <table class="table table-striped">
+            <table class="table table-striped table-bordered">
                 <tbody>
                     <tr>
                         <th>タスク名</th>
-                        <th>期日</th>
-                        <th>作成日</th>
+                        <th>期日
+                            <span wire:click="sortBy('created_at')" class="float-right text-sm" style="cursor: pointer">
+                                <i class="fa fa-arrow-up"></i>
+                                <i class="fa fa-arrow-down"></i>
+                            </span>
+                        </th>
+                        <th>作成日
+                            <span wire:click="sortBy('created_at')" class="float-right text-sm" style="cursor: pointer">
+                                <i class="fa fa-arrow-up"></i>
+                                <i class="fa fa-arrow-down text-muted"></i>
+                            </span>
+                        </th>
                         <th>@sortablelink('deadline', '締め切り')</th>
                         <th>@sortablelink('created_at', '作成日時')</th>
                         <th></th>
@@ -64,8 +75,8 @@
                                     $task_color = '';
                                 }
                             } else {
-                                    $task_color = '';
-                                }
+                                $task_color = '';
+                            }
                         @endphp
                         <tr>
                             <td>{{ $task->name }}</td>
@@ -97,6 +108,7 @@
     </div>
 </div>
 </div>
+@livewireScripts
 </body>
 
 </html>
