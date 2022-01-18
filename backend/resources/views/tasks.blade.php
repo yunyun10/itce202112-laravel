@@ -19,8 +19,7 @@
             <form method="POST" action="/create">
                 @csrf
                 <div class="form-group">
-                    <input type="text" name="name" class="form-control" value="{{ old('name') }}"
-                        placeholder="タスク名">
+                    <input type="text" name="name" class="form-control" value="{{ old('name') }}" placeholder="タスク名">
                     @if ($errors->has('name'))
                         <p class="text-danger">{{ $errors->first('name') }}</p>
                     @endif
@@ -46,8 +45,8 @@
                         <th>タスク名</th>
                         <th>期日</th>
                         <th>作成日</th>
-                        <th></th>
-                        <th></th>
+                        <th>@sortablelink('deadline', '締め切り')</th>
+                        <th>@sortablelink('created_at', '作成日時')</th>
                         <th></th>
                     </tr>
                     @foreach ($tasks as $task)
@@ -65,8 +64,8 @@
                                     $task_color = '';
                                 }
                             } else {
-                                $task_color = '';
-                            }
+                                    $task_color = '';
+                                }
                         @endphp
                         <tr>
                             <td>{{ $task->name }}</td>

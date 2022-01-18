@@ -8,11 +8,16 @@ use App\Http\Requests\TaskRequest;
 
 class TaskController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $tasks = Task::where('is_completed', 0)->paginate(10);
-        return view('tasks',['tasks' => $tasks]);
+        return view('tasks', ['tasks' => $tasks]);
+
+        $tasks = Task::sortable()->get();
+        return view('tasks')->with('tasks', $tasks);
     }
-    public function create(Request $request) {
+    public function create(Request $request)
+    {
         $create_tasks = Task::create([
             'name' => $request->name,
             'deadline' => $request->deadline
@@ -47,7 +52,8 @@ class TaskController extends Controller
     }
 
 
-    public function update(Request $request) {
+    public function update(Request $request)
+    {
         $update_tasks = Task::where('id', $request->id)->update([
             'name' => $request->name,
             'deadline' => $request->deadline
