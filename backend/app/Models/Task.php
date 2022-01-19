@@ -17,6 +17,6 @@ class Task extends Model
         'deadline',
         'is_completed'
     ];
-    public $sortable = ['created_at', 'deadline'];
+    use Sortable;
 }
 

@@ -1,5 +1,6 @@
 {
     "require": {
-        "livewire/livewire": "^2.9"
+        "livewire/livewire": "^2.9",
+        "kyslik/column-sortable": "^6.4"
     }
 }

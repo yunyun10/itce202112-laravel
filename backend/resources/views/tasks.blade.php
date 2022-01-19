@@ -10,7 +10,7 @@
     @extends('layout')
     @section('content')
     @stop
-    @livewireStyles
+
 </head>
 
 <body>
@@ -108,7 +108,7 @@
     </div>
 </div>
 </div>
-@livewireScripts
+
 </body>
 
 </html>

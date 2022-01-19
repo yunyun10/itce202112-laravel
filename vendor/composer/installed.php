@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '953891049753600f742deb5795bbb73619c1727b',
+        'reference' => '615419e7f8f9b018a327302447c8b52b89376f5e',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '953891049753600f742deb5795bbb73619c1727b',
+            'reference' => '615419e7f8f9b018a327302447c8b52b89376f5e',
             'dev_requirement' => false,
         ),
         'doctrine/inflector' => array(
@@ -125,6 +125,15 @@
             'install_path' => __DIR__ . '/../illuminate/validation',
             'aliases' => array(),
             'reference' => '3ac1eed5b4d5fe355a510893164ecc718febdd54',
+            'dev_requirement' => false,
+        ),
+        'kyslik/column-sortable' => array(
+            'pretty_version' => '6.4.1',
+            'version' => '6.4.1.0',
+            'type' => 'package',
+            'install_path' => __DIR__ . '/../kyslik/column-sortable',
+            'aliases' => array(),
+            'reference' => '44f9da98acd31b2e871d0074bd638998990888b1',
             'dev_requirement' => false,
         ),
         'livewire/livewire' => array(
