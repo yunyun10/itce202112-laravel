@@ -7,18 +7,17 @@
         "issues": "https://github.com/laravel/framework/issues",
         "source": "https://github.com/laravel/framework"
     },
-    "authors": [
-        {
-            "name": "Taylor Otwell",
-            "email": "taylor@laravel.com"
-        }
-    ],
+    "authors": [{
+        "name": "Taylor Otwell",
+        "email": "taylor@laravel.com"
+    }],
     "require": {
         "php": "^7.3|^8.0",
         "ext-json": "*",
         "ext-mbstring": "*",
         "doctrine/inflector": "^1.4|^2.0",
         "illuminate/collections": "^8.0",
+        "kyslik/column-sortable": "^6.0",
         "illuminate/contracts": "^8.0",
         "illuminate/macroable": "^8.0",
         "nesbot/carbon": "^2.53.1",

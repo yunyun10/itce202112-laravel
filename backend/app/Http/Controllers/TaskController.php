@@ -10,11 +10,9 @@ class TaskController extends Controller
 {
     public function index()
     {
-        $tasks = Task::where('is_completed', 0)->paginate(10);
-        return view('tasks', ['tasks' => $tasks]);
+        $tasks = Task::where('is_completed', 0)->sortable()->paginate(10);
 
-        $tasks = Task::sortable()->get();
-        return view('tasks')->with('tasks', $tasks);
+        return view('tasks', ['tasks' => $tasks]);
     }
     public function create(Request $request)
     {
