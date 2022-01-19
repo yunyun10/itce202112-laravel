@@ -24,7 +24,7 @@
                     @if ($errors->has('name'))
                         <p class="text-danger">{{ $errors->first('name') }}</p>
                     @endif
-                    <input type="datetime-local" name="deadline" class="form-control mt-3 w-5" placeholder="締め切り日">
+                    <input type="datetime-local" name="deadline" class="form-control w-25" placeholder="締め切り日">
                     @if ($errors->has('deadline'))
                         <p class="text-danger">{{ $errors->first('deadline') }}</p>
                     @endif
