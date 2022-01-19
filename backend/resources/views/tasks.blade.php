@@ -43,22 +43,21 @@
             <table class="table table-striped table-bordered">
                 <tbody>
                     <tr>
+                        <td></td>
+                        <td>@sortablelink('deadline', '並び替え')</td>
+                        <td>@sortablelink('created_at', '並び替え')</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                </thead>
+                    <tr>
                         <th>タスク名</th>
                         <th>期日
-                            <span wire:click="sortBy('created_at')" class="float-right text-sm" style="cursor: pointer">
-                                <i class="fa fa-arrow-up"></i>
-                                <i class="fa fa-arrow-down"></i>
                             </span>
                         </th>
                         <th>作成日
-                            <span wire:click="sortBy('created_at')" class="float-right text-sm" style="cursor: pointer">
-                                <i class="fa fa-arrow-up"></i>
-                                <i class="fa fa-arrow-down text-muted"></i>
-                            </span>
-                        </th>
-                        <th>@sortablelink('deadline', '締め切り')</th>
-                        <th>@sortablelink('created_at', '作成日時')</th>
-                        <th></th>
                     </tr>
                     @foreach ($tasks as $task)
                         @php
