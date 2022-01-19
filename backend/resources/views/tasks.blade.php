@@ -42,6 +42,17 @@
         @if (count($tasks) > 0)
             <table class="table table-striped">
                 <tbody>
+                <thead>
+                    <tr>
+                        <td></td>
+                        <td>@sortablelink('deadline', '並び替え')</td>
+                        <td>@sortablelink('created_at', '並び替え')</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                </thead>
                     <tr>
                         <th>タスク名</th>
                         <th>期日</th>
