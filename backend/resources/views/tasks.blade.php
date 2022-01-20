@@ -10,6 +10,7 @@
     @extends('layout')
     @section('content')
     @stop
+
 </head>
 
 <body>
@@ -44,7 +45,7 @@
     <div class="card-header">タスク一覧</div>
     <div class="card-body">
         @if (count($tasks) > 0)
-            <table class="table table-striped">
+            <table class="table table-striped table-bordered">
                 <tbody>
                     <thead>
                         <tr>
@@ -60,12 +61,21 @@
                         </tr>
                     </thead>
                     <tr>
+                        <td></td>
+                        <td>@sortablelink('deadline', '並び替え')</td>
+                        <td>@sortablelink('created_at', '並び替え')</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                </thead>
+                    <tr>
                         <th>タスク名</th>
-                        <th>期日</th>
-                        <th>作成日</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th>期日
+                            </span>
+                        </th>
+                        <th>作成日
                     </tr>
                     @foreach ($tasks as $task)
                         @php
@@ -115,6 +125,7 @@
     </div>
 </div>
 </div>
+
 </body>
 
 </html>
