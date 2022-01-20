@@ -34,6 +34,11 @@
                 </div>
             </form>
         </div>
+        <form class="d-flex" method="POST" action="/search">
+        @csrf
+        <input class="form-control w-25" type="search" placeholder="タスクの検索" aria-label="Search" name="search" valie="{{ old('search') }}">
+        <button class="btn btn-outline-success w-25" type="submit">Search</button>
+        </form>
 </body>
 <div class="card">
     <div class="card-header">タスク一覧</div>
