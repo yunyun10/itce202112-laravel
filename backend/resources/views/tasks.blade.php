@@ -19,8 +19,7 @@
             <form method="POST" action="/create">
                 @csrf
                 <div class="form-group">
-                    <input type="text" name="name" class="form-control" value="{{ old('name') }}"
-                        placeholder="タスク名">
+                    <input type="text" name="name" class="form-control" value="{{ old('name') }}" placeholder="タスク名">
                     @if ($errors->has('name'))
                         <p class="text-danger">{{ $errors->first('name') }}</p>
                     @endif
@@ -42,17 +41,19 @@
         @if (count($tasks) > 0)
             <table class="table table-striped">
                 <tbody>
-                <thead>
-                    <tr>
-                        <td></td>
-                        <td>@sortablelink('deadline', '並び替え')</td>
-                        <td>@sortablelink('created_at', '並び替え')</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <thead>
+                        <tr>
 
-                    </tr>
-                </thead>
+
+                            <td></td>
+                            <td>@sortablelink('deadline', '並び替え')</td>
+                            <td>@sortablelink('created_at', '並び替え')</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+                    </thead>
                     <tr>
                         <th>タスク名</th>
                         <th>期日</th>
