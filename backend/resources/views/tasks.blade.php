@@ -91,15 +91,16 @@
                                 } else {
                                     $task_color = '';
                                 }
-                            } else {
-                                $task_color = '';
                             }
                         @endphp
-                        <tr>
-                            <td>{{ $task->name }}</td>
-                            <td>{{ $task->deadline }}</td>
+                        <tr class="{{ $task_color }} bg-opacity-75 align-middle">
+                            <td>
+                                {{ $task->name }}
+                            </td>
+                            <td>
+                                {{ $task->deadline }}
+                            </td>
                             <td>{{ $task->created_at }}</td>
-                            <td></td>
                             <td>
                                 <form method="POST" action="/complete">
                                     @csrf
@@ -113,12 +114,13 @@
                                     @csrf
                                     <input type="hidden" name="id" value="{{ $task->id }}">
                                     <button type="submit" name="delete" class="btn btn-outline-danger"
-                                        onClick="delete_alert(event);return false;" style="width: 100px;"> 削除</button>
+                                        onClick="delete_alert(event);return false;" style="width: 100px;">
+                                        削除</button>
                                 </form>
                             </td>
                         </tr>
                     @endforeach
-
+                    {{ $tasks->links() }}
                 </tbody>
             </table>
         @endif

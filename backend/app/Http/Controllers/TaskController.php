@@ -56,9 +56,10 @@ class TaskController extends Controller
             'name' => $request->name,
             'deadline' => $request->deadline
         ]);
-
-        return redirect('/tasks');
+        return redirect('/');
     }
+    }
+<<<<<<< HEAD
 
 
     public function sortBy ($created_at){
@@ -68,3 +69,5 @@ class TaskController extends Controller
 }
 
 
+=======
+>>>>>>> feature/#3
