@@ -10,7 +10,6 @@
     @extends('layout')
     @section('content')
     @stop
-
 </head>
 
 <body>
@@ -24,7 +23,7 @@
                     @if ($errors->has('name'))
                         <p class="text-danger">{{ $errors->first('name') }}</p>
                     @endif
-                    <input type="datetime-local" name="deadline" class="form-control w-25" placeholder="締め切り日">
+                    <input type="datetime-local" name="deadline" class="form-control mt-3 w-5" placeholder="締め切り日">
                     @if ($errors->has('deadline'))
                         <p class="text-danger">{{ $errors->first('deadline') }}</p>
                     @endif
@@ -32,15 +31,9 @@
                         <button type="submit" class="btn btn-outline-dark"><i class="fas fa-plus fa-lg mr-2"
                                 style="color: grey;"></i>追加</button>
                     </div>
-<<<<<<< HEAD
                 </div>
             </form>
         </div>
-        <form class="d-flex" method="POST" action="/search">
-        @csrf
-        <input class="form-control w-25" type="search" placeholder="タスクの検索" aria-label="Search" name="search" valie="{{ old('search') }}">
-        <button class="btn btn-outline-success w-25" type="submit">Search</button>
-        </form>
 </body>
 <div class="card">
     <div class="card-header">タスク一覧</div>
@@ -48,50 +41,6 @@
         @if (count($tasks) > 0)
             <table class="table table-striped table-bordered">
                 <tbody>
-                    <thead>
-                        <tr>
-=======
-                </form>
-            </div>
-       </div>
-        <div class="card">
-            <div class="card-header">タスク一覧
-                {{--<form method="POST" action="/lists">
-                    @csrf
-                    <button type="submit" class="btn btn-outline-secondary" style="width: 100px;"> タスク完了一覧
-                    </button>--}}
-            </div>
-            <div class=" card-body">
-                @if (count($tasks) > 0)
-                    <table class="table table-striped">
-                        <tbody>
-                            <tr>
-                                <th>タスク名</th>
-                                <th>締め切り</th>
-                                <th>作成日時</th>
-                                <th>完了ボタン</th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                            @foreach ($tasks as $task)
-                                <tr>
-                                    <td>{{ $task->name }}</td>
-                                    <td>{{ $task->deadline }}</td>
-                                    <td>{{ $task->created_at }}</td>
-                                    <td>{{ $task->is_completed }}</td>
->>>>>>> feature/#11
-
-
-<<<<<<< HEAD
-                            <td></td>
-                            <td>@sortablelink('deadline', '並び替え')</td>
-                            <td>@sortablelink('created_at', '並び替え')</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-
-                        </tr>
-                    </thead>
                     <tr>
                         <td></td>
                         <td>@sortablelink('deadline', '並び替え')</td>
@@ -101,13 +50,13 @@
                         <td></td>
 
                     </tr>
-                </thead>
+                    </thead>
                     <tr>
                         <th>タスク名</th>
-                        <th>期日
-                            </span>
-                        </th>
-                        <th>作成日
+                        <th>期日</th>
+                        <th>作成日</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                     @foreach ($tasks as $task)
                         @php
@@ -123,16 +72,15 @@
                                 } else {
                                     $task_color = '';
                                 }
+                            } else {
+                                $task_color = '';
                             }
                         @endphp
-                        <tr class="{{ $task_color }} bg-opacity-75 align-middle">
-                            <td>
-                                {{ $task->name }}
-                            </td>
-                            <td>
-                                {{ $task->deadline }}
-                            </td>
+                        <tr>
+                            <td>{{ $task->name }}</td>
+                            <td>{{ $task->deadline }}</td>
                             <td>{{ $task->created_at }}</td>
+                            <td></td>
                             <td>
                                 <form method="POST" action="/complete">
                                     @csrf
@@ -146,44 +94,17 @@
                                     @csrf
                                     <input type="hidden" name="id" value="{{ $task->id }}">
                                     <button type="submit" name="delete" class="btn btn-outline-danger"
-                                        onClick="delete_alert(event);return false;" style="width: 100px;">
-                                        削除</button>
+                                        onClick="delete_alert(event);return false;" style="width: 100px;"> 削除</button>
                                 </form>
                             </td>
                         </tr>
                     @endforeach
-                    {{ $tasks->links() }}
                 </tbody>
             </table>
         @endif
-=======
-                                                @if ($task->is_completed === 1)
-                                                    完了
-                                                @elseif($task->is_completed === 0)
-                                                    未完了
-                                                @endif
-                                            </button></td>
-                                    </form>
-                                    <td>
-                                        <form method="POST" action="{{ url('/task/' . $task->id) }}">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-outline-danger"
-                                            style="width: 100px;"><i class="far fa-trash-alt"></i> 削除</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
-                @endif
-            </div>
-        </div>
->>>>>>> feature/#11
     </div>
 </div>
 </div>
-
 </body>
 
 </html>

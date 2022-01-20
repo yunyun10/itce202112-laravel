@@ -58,16 +58,4 @@ class TaskController extends Controller
         ]);
         return redirect('/');
     }
-    }
-<<<<<<< HEAD
-
-
-    public function sortBy ($created_at){
-
-        dd('here');
-    }
 }
-
-
-=======
->>>>>>> feature/#3
