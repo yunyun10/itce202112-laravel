@@ -11,7 +11,7 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
     @extends('layout')
     @section('content')
@@ -20,7 +20,7 @@
 
 <body>
     <div class="card mb-3">
-        <div class="card-header">タスク新規追加</div>
+        <div class="card-header">タスク新規追加<i class="fal fa-arrow-down"></i></div>
         <div class="card-body">
             <form method="POST" action="/create">
                 @csrf
@@ -42,13 +42,13 @@
         </div>
         <div class="text-end">
             <button type="button" class="btn .border.border-0 w-auto dropdown-toggle btn-sm" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">Primary</button>
+                aria-expanded="false"><i class="fa fa-arrow-up"></i><i class="fa fa-arrow-down">ソート</i></button>
             <div class="dropdown-menu">
 
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Separated link</a>
+                <a class="dropdown-item " href="/">@sortablelink('deadline', '期日並び替え')</a>
+                <a class="dropdown-item" href="/">@sortablelink('created_at', '作成日並び替え')</a>
+
+
             </div>
             <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
                         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
@@ -71,8 +71,8 @@
                 <tbody>
                     <tr>
                         <td></td>
-                        <td>@sortablelink('deadline', '並び替え')</td>
-                        <td>@sortablelink('created_at', '並び替え')</td>
+                        <td></td>
+                        <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
