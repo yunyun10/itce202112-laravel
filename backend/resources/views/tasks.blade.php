@@ -40,13 +40,7 @@
                             <a class="dropdown-item" href="/">完了したタスク</a>
                         </div>
                     </td>
-                    <style>
-                        .btn-group {
-                            position: relative;
-                            top: 600px;
-                        }
-
-                    </style>
+                    <td width="100"><button type="button" class="btn .border.border-0 w-auto dropdown-toggle btn-sm">
                 </div>
             </tr>
             </div>
