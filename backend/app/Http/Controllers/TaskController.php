@@ -55,4 +55,7 @@ class TaskController extends Controller
 
         return redirect('/tasks');
     }
+    public function view_calendar(Request $request){
+        return view('calendar');
+    }
 }

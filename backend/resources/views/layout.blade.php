@@ -17,7 +17,7 @@
                 <a class="nav-link active" aria-current="page" href="/">リスト</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/views/calendar.blade.php">カレンダー</a>
+                <a class="nav-link" href="/calendar">カレンダー</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">ダッシュボード</a>

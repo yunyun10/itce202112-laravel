@@ -23,4 +23,5 @@ Route::post('/complete', [TaskController::class, 'complete']);
 Route::post('/uncomplete', [TaskController::class, 'uncomplete']);
 Route::post('/delete', [TaskController::class, 'delete']);
 Route::post('/update', [TaskController::class, 'update']);
-Route::get('/calendar',[TaskController::class, 'index']);
+Route::get('/calendar',[TaskController::class, 'view_calendar']);
+
