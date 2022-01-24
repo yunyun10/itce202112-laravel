@@ -58,4 +58,7 @@ class TaskController extends Controller
         ]);
         return redirect('/');
     }
+    public function view_calendar(Request $request){
+        return view('calendar');
+    }
 }
