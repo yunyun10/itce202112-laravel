@@ -32,8 +32,9 @@
 <div>
     @yield('content')
 </div>
+<div class="text-center">
 <footer>copy rights by ToDoApp</footer>
-
+</div>
 
 </body>
 </head>

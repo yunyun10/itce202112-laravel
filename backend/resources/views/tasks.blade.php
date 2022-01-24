@@ -98,7 +98,7 @@
                                 @endif
                             </th>
                             <th>
-                                <div class="text-start">
+                                <div class="text-center">
                                     <button type="submit" class="btn btn-outline-dark align-items-center"><i
                                             class="fas fa-plus fa-lg mr-2" style="color: grey;"></i>タスクを追加</button>
                             </th>
