@@ -59,7 +59,7 @@ return [
     /*
     default anchor class, if value is null none is added
      */
-    'anchor_class'                  => 'text-secondary,
+    'anchor_class'                  => 'text-secondary',
 
     /*
     default active anchor class, if value is null none is added

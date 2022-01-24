@@ -33,10 +33,7 @@ Route::post('/uncomplete', [TaskController::class, 'uncomplete']);
 Route::get('/update_page', [TaskController::class, 'view_update']);
 
 Route::post('/update', [TaskController::class, 'update']);
-<<<<<<< HEAD
 
 Route::get('/search', [TaskController::class, 'search']);
-=======
-Route::get('/calendar',[TaskController::class, 'view_calendar']);
 
->>>>>>> feature/#24
+Route::get('/calendar', [TaskController::class, 'view_calendar']);

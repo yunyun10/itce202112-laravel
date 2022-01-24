@@ -19,53 +19,6 @@
 </head>
 
 <body>
-<<<<<<< HEAD
-    <div class="card mb-3">
-        <div class="card-header">タスク新規追加<i class="fal fa-arrow-down"></i></div>
-        <div class="card-body">
-            <form method="POST" action="/create">
-                @csrf
-                <div class="form-group">
-                    <input type="text" name="name" class="form-control" value="{{ old('name') }}" placeholder="タスク名">
-                    @if ($errors->has('name'))
-                        <p class="text-danger">{{ $errors->first('name') }}</p>
-                    @endif
-                    <input type="datetime-local" name="deadline" class="form-control w-25" placeholder="締め切り日">
-                    @if ($errors->has('deadline'))
-                        <p class="text-danger">{{ $errors->first('deadline') }}</p>
-                    @endif
-                    <div class="text-end">
-                        <button type="submit" class="btn btn-outline-dark"><i class="fas fa-plus fa-lg mr-2"
-                                style="color: grey;"></i>追加</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-        <table>
-            <tr>
-                <div class="btn-group" role="group" aria-label="ボタングループサンプル">
-                    <td><button type="button" class="btn .border.border-0 w-auto dropdown-toggle btn-sm"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                                class="fa fa-arrow-up"></i><i class="fa fa-arrow-down">ソート</i></button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item " href="/">@sortablelink('deadline', '期日並び替え')</a>
-                            <a class="dropdown-item" href="/">@sortablelink('created_at', '作成日並び替え')</a>
-                        </div>
-                    </td>
-                    <td><button type="button" class="btn .border.border-0 w-auto dropdown-toggle btn-sm"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                                class="fa fa-arrow-up"></i><i class="fa fa-arrow-down">タスク一覧</i></button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item " href="/">全てのタスク</a>
-                            <a class="dropdown-item" href="/">未完了のタスク</a>
-                            <a class="dropdown-item" href="/">完了したタスク</a>
-                        </div>
-                    </td>
-                </div>
-            </tr>
-    </div>
-    </table>
-=======
     <h1>
         <table>
             <tr>
@@ -93,7 +46,7 @@
             </div>
         </table>
     </h1>
->>>>>>> feature/#24
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
     </script>
@@ -114,11 +67,11 @@
             <table class="table table-striped table-bordered">
                 <tbody>
                     <tr>
-<<<<<<< HEAD
-                        <td></td>
-=======
+
+
+
                         <td>新規作成</td>
->>>>>>> feature/#24
+
                         <td></td>
                         <td></td>
                         <td></td>
