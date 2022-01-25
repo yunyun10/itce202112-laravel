@@ -32,7 +32,7 @@
 <div>
     @yield('content')
 </div>
-<div class="text-center">
+<div class="fixed-bottom text-center">
 <footer>copy rights by ToDoApp</footer>
 </div>
 
