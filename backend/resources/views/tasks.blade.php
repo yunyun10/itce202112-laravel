@@ -26,7 +26,7 @@
                     <td><button type="button" class="btn .border.border-0 w-auto dropdown-toggle btn-sm"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
                                 class="fa fa-arrow-up"></i><i class="fa fa-arrow-down">ソート</i></button>
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu" style="text-align: center;">
                             <a class="dropdown-item " href="/">@sortablelink('deadline', '期日並び替え')</a>
                             <a class="dropdown-item" href="/">@sortablelink('created_at', '作成日並び替え')</a>
                         </div>
@@ -40,7 +40,6 @@
                             <a class="dropdown-item" href="/">完了したタスク</a>
                         </div>
                     </td>
-                    
                 </div>
             </tr>
             </div>
