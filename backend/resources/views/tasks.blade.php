@@ -40,7 +40,7 @@
                             <a class="dropdown-item" href="/">完了したタスク</a>
                         </div>
                     </td>
-                    
+
                 </div>
             </tr>
             </div>
