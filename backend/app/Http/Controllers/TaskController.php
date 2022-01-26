@@ -64,7 +64,7 @@ class TaskController extends Controller
 
     public function view_lists(Request $request){
         $lists = Task::where('is_completed', 0)->sortable()->paginate(10);
-        return view('completed',['lists' => $lists]);
+        return view('lists',['lists' => $lists]);
     }
 
 }
