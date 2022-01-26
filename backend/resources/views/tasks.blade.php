@@ -61,7 +61,6 @@
 <div class="card">
     <div class="card-header">タスク一覧</div>
     <div class="card-body">
-        @if (count($tasks) > 0)
             <table class="table table-striped table-bordered">
                 <tbody>
                     <tr>
@@ -100,7 +99,7 @@
                         <th></th>
                         <th></th>
                     </tr>
-
+         @if (count($tasks) > 0)
                     @foreach ($tasks as $task)
                         @php
                             $today = date('Y-m-d');
