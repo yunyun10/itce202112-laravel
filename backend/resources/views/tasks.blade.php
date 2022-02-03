@@ -62,7 +62,7 @@
 <div class="card">
     <div class="card-header">タスク一覧</div>
     <div class="card-body">
-        <table class="table table-striped table-bordered">
+        <table class="table table-pink table-striped table-table-bordered" >
             <tbody>
                 <tr>
 
@@ -74,7 +74,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    
+
 
                 </tr>
                 </thead>
