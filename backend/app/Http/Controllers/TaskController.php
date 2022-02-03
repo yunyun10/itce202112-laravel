@@ -61,4 +61,10 @@ class TaskController extends Controller
     public function view_calendar(Request $request){
         return view('calendar');
     }
+
+    public function view_lists(Request $request){
+        $lists = Task::where('is_completed', 1)->sortable()->paginate(10);
+        return view('lists',['lists' => $lists]);
+    }
+
 }
