@@ -22,7 +22,7 @@ Route::get('/', [TaskController::class, 'index']);
 
 Route::post('/create', [TaskController::class, 'create']);
 
-Route::post('complete', [TaskController::class, 'complete']);
+Route::post('/complete', [TaskController::class, 'complete']);
 
 Route::get('/show_completes', [TaskController::class, 'view_completes']);
 

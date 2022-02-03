@@ -74,7 +74,7 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
+                    
 
                 </tr>
                 </thead>
@@ -126,7 +126,6 @@
                             <td>{{ $task->name }}</td>
                             <td>{{ $task->deadline }}</td>
                             <td>{{ $task->created_at }}</td>
-                            <td></td>
                             <td>
                                 <form method="POST" action="/complete">
                                     @csrf
