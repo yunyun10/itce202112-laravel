@@ -18,27 +18,13 @@
     @stop
 </head>
 
-<body>
+<body style="padding-top: 100px;">
     <h1>
         <table>
             <tr>
-                <div class="btn-group" role="group" aria-label="ボタングループサンプル">
-                    <td><button type="button" class="btn .border.border-0 w-auto dropdown-toggle btn-sm"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                                class="fa fa-arrow-up"></i><i class="fa fa-arrow-down">ソート</i></button>
-                        <div class="dropdown-menu" style="text-align: center;">
-                            <a class="dropdown-item " href="/">@sortablelink('deadline', '期日並び替え')</a>
-                            <a class="dropdown-item" href="/">@sortablelink('created_at', '作成日並び替え')</a>
-                        </div>
+
                     </td>
-                    <td><button type="button" class="btn .border.border-0 w-auto dropdown-toggle btn-sm"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                                class="fa fa-arrow-up"></i><i class="fa fa-arrow-down">タスク一覧</i></button>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/">全てのタスク</a>
-                            <a class="dropdown-item" href="/">未完了のタスク</a>
-                            <a class="dropdown-item" href="/">完了したタスク</a>
-                        </div>
+                    <td>
                     </td>
                 </div>
             </tr>
@@ -57,19 +43,45 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
     </script>
     </div>
-</body>
-<div class="card">
+
+<div class="container-fluid">
+    <div class="row">
+    <div class="clearfix"></div>
+    <div class="col-sm-4 col-md-2 sidebar-fixed" style="background-color:white;">
+        <ul class="nav nav-sidebar">
+            <li class="active"><a href="">料理</a></li>
+            <li><a href="">アクセス</a></li>
+            <li><a href="">皆様のご意見</a></li>
+            <li><a href="/questionnaire">アンケート</a></li>
+        </ul>
+    </div>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+<div class="card" style="background-color:#e8e7e6;">
     <div class="card-header">タスク一覧</div>
     <div class="card-body">
-            <table class="table table-striped table-bordered">
+            <table class="table table-striped ">
                 <tbody>
                     <tr>
                         <td>新規作成</td>
+                        <td> <div class="btn-group" role="group" aria-label="ボタングループサンプル">
+                            <td><button type="button" class="btn .border.border-0 w-auto dropdown-toggle btn-sm"
+                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                                        class="fa fa-arrow-up"></i><i class="fa fa-arrow-down">ソート</i></button>
+                                <div class="dropdown-menu" style="text-align: center;">
+                                    <a class="dropdown-item " href="/">@sortablelink('deadline', '期日並び替え')</a>
+                                    <a class="dropdown-item" href="/">@sortablelink('created_at', '作成日並び替え')</a>
+                                </div></td>
+                        <td><button type="button" class="btn .border.border-0 w-auto dropdown-toggle btn-sm"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
+                                class="fa fa-arrow-up"></i><i class="fa fa-arrow-down">タスク一覧</i></button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="/">全てのタスク</a>
+                            <a class="dropdown-item" href="/">未完了のタスク</a>
+                            <a class="dropdown-item" href="/">完了したタスク</a>
+                        </div></td>
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        
 
                     </tr>
                     </thead>
@@ -78,7 +90,7 @@
                             @csrf
                             <th>
                                 <div class="form-group">
-                                    <input type="text" name="name" class="form-control" value="{{ old('name') }}"
+                                    <input type="text" name="name" class="border-rounded" value="{{ old('name') }}"
                                         placeholder="タスク名">
                                     @if ($errors->has('name'))
                                         <p class="text-danger">{{ $errors->first('name') }}</p>
