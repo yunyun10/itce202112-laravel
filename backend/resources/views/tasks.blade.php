@@ -62,49 +62,48 @@
 <div class="card">
     <div class="card-header">タスク一覧</div>
     <div class="card-body">
-        @if (count($tasks) > 0)
-            <table class="table table-striped table-bordered">
-                <tbody>
-                    <tr>
+        <table class="table table-striped table-bordered">
+            <tbody>
+                <tr>
 
 
 
-                        <td>新規作成</td>
+                    <td>新規作成</td>
 
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
 
-                    </tr>
-                    </thead>
-                    <tr>
-                        <form method="POST" action="/create">
-                            @csrf
-                            <th>
-                                <div class="form-group">
-                                    <input type="text" name="name" class="form-control" value="{{ old('name') }}"
-                                        placeholder="タスク名">
-                                    @if ($errors->has('name'))
-                                        <p class="text-danger">{{ $errors->first('name') }}</p>
-                                    @endif
-                            </th>
-                            <th><input type="datetime-local" name="deadline" class="form-control" placeholder="締め切り日">
-                                @if ($errors->has('deadline'))
-                                    <p class="text-danger">{{ $errors->first('deadline') }}</p>
+                </tr>
+                </thead>
+                <tr>
+                    <form method="POST" action="/create">
+                        @csrf
+                        <th>
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" value="{{ old('name') }}"
+                                    placeholder="タスク名">
+                                @if ($errors->has('name'))
+                                    <p class="text-danger">{{ $errors->first('name') }}</p>
                                 @endif
-                            </th>
-                            <th>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-outline-dark align-items-center"><i
-                                            class="fas fa-plus fa-lg mr-2" style="color: grey;"></i>タスクを追加</button>
-                            </th>
-                            <th></th>
-                        </form>
+                        </th>
+                        <th><input type="datetime-local" name="deadline" class="form-control" placeholder="締め切り日">
+                            @if ($errors->has('deadline'))
+                                <p class="text-danger">{{ $errors->first('deadline') }}</p>
+                            @endif
+                        </th>
+                        <th>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-outline-dark align-items-center"><i
+                                        class="fas fa-plus fa-lg mr-2" style="color: grey;"></i>タスクを追加</button>
+                        </th>
                         <th></th>
-                    </tr>
-
+                    </form>
+                    <th></th>
+                </tr>
+                @if (count($tasks) > 0)
                     @foreach ($tasks as $task)
                         @php
                             $today = date('Y-m-d');
@@ -146,8 +145,8 @@
                             </td>
                         </tr>
                     @endforeach
-                </tbody>
-            </table>
+            </tbody>
+        </table>
         @endif
     </div>
 </div>
