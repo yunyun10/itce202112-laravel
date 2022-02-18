@@ -56,7 +56,7 @@
         </ul>
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-<div class="card" style="background-color:#e8e7e6;">
+<div class="card">
     <div class="card-header">タスク一覧</div>
     <div class="card-body">
             <table class="table table-striped ">
@@ -81,7 +81,7 @@
                         </div></td>
                         <td></td>
                         <td></td>
-                        
+
 
                     </tr>
                     </thead>
