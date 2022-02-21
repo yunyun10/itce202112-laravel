@@ -38,4 +38,4 @@ Route::get('/search', [TaskController::class, 'search']);
 
 Route::get('/calendar', [TaskController::class, 'view_calendar']);
 
-Route::get('/lists',[TaskController::class, 'view_lists']);
+Route::get('/completed_lists',[TaskController::class, 'view_lists']);

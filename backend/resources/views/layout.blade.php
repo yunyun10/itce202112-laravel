@@ -4,17 +4,18 @@
 <head>
     <title>ToDoAPP</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="/">ToDoAPP</a>
+          <a class="navbar-brand" href="/">HOME</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/lists">リスト</a>
+                <a class="nav-link" aria-current="page" href="/completed_lists">完了タスク一覧</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/calendar">カレンダー</a>
@@ -37,7 +38,7 @@
 </div>
 
 </body>
-</head>
+
 
 
 

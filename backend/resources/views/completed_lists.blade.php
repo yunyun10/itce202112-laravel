@@ -12,13 +12,31 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-
-    @extends('layout')
-    @section('content')
-    @stop
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/completed_lists" style="font-weight: bold">完了タスク一覧</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/calendar">カレンダー</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ダッシュボード</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
     <h1>
         <table>
             <tr>
@@ -51,22 +69,10 @@
     </div>
 
     <div class="card">
-        <div class="card-header">タスク一覧</div>
+        <div class="card-header">完了タスク一覧</div>
         <div class="card-body">
             @if (count($lists) > 0)
                 <table class="table table-striped table-bordered">
-                    <tbody>
-                        <tr>
-                            <td>タスク一覧</td>
-
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-
-                        </tr>
-                        </thead>
                         @foreach ($lists as $list)
                             <tr>
                                 <td>{{ $list->name }}</td>
