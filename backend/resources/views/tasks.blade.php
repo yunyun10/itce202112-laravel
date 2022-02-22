@@ -13,22 +13,26 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Kiwi+Maru&family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Kiwi+Maru&family=M+PLUS+Rounded+1c&display=swap"
+        rel="stylesheet">
     @extends('layout')
     @section('content')
     @stop
 </head>
 
 <body>
-    <div class="all" style="font-family: 'Dela Gothic One', cursive;font-family: 'Kiwi Maru', serif;font-family: 'M PLUS Rounded 1c', sans-serif;;">
-        <h1>
+    <div class="all"
+        style="font-family: 'Dela Gothic One', cursive;font-family: 'Kiwi Maru', serif;font-family: 'M PLUS Rounded 1c', sans-serif;;">
+        <h1 class="sortable"
+            style="font-family:'Dela Gothic One', cursive;font-family: 'Kiwi Maru', serif;font-family: 'M PLUS Rounded 1c', sans-serif;;">
             <table>
                 <tr>
-                    <div class="btn-group" role="group" aria-label="ボタングループサンプル" style="font-family: 'Dela Gothic One', cursive;font-family: 'Kiwi Maru', serif;font-family: 'M PLUS Rounded 1c', sans-serif;">
+                    <div class="btn-group" role="group" aria-label="ボタングループサンプル">
                         <td><button type="button" class="btn .border.border-0 w-auto dropdown-toggle btn-sm"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                                    class="fa fa-arrow-up"></i><i class="fa fa-arrow-down">ソート</i></button>
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-arrow-up"></i><i class="fa fa-arrow-down"></i>ソート</button>
                             <div class="dropdown-menu" style="text-align: center;">
                                 <a class="dropdown-item " href="/">@sortablelink('deadline', '期日並び替え')</a>
                                 <a class="dropdown-item" href="/">@sortablelink('created_at', '作成日並び替え')</a>
@@ -36,7 +40,7 @@
                         </td>
                         <td><button type="button" class="btn .border.border-0 w-auto dropdown-toggle btn-sm"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i
-                                    class="fa fa-arrow-up"></i><i class="fa fa-arrow-down">タスク一覧</i></button>
+                                    class="fa fa-arrow-up"></i><i class="fa fa-arrow-down"></i>タスク一覧</button>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item" href="/">全てのタスク</a>
                                 <a class="dropdown-item" href="/">未完了のタスク</a>
@@ -45,119 +49,104 @@
                         </td>
                     </div>
                 </tr>
-
             </table>
         </h1>
-
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
                 integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
         </script>
-
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
                 integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
         </script>
-
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
                 integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
         </script>
-
-
-    <div class="card">
-        <div class="card-header">タスク一覧</div>
-        <div class="card-body">
-            <table class="table table-pink table-striped table-table-bordered">
-                <tbody>
-                    <tr>
-
-
-
-                        <td>新規作成</td>
-
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-
-
-                    </tr>
-                    </thead>
-                    <tr>
-                        <form method="POST" action="/create">
-                            @csrf
-                            <th>
-                                <div class="form-group">
-                                    <input type="text" name="name" class="form-control" value="{{ old('name') }}"
-                                        placeholder="タスク名">
-                                    @if ($errors->has('name'))
-                                        <p class="text-danger">{{ $errors->first('name') }}</p>
+        <div class="card">
+            <div class="card-header">タスク一覧</div>
+            <div class="card-body">
+                <table class="table table-pink table-striped table-table-bordered">
+                    <tbody>
+                        <tr>
+                            <td>新規作成</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <form method="POST" action="/create">
+                                @csrf
+                                <th>
+                                    <div class="form-group">
+                                        <input type="text" name="name" class="form-control"
+                                            value="{{ old('name') }}" placeholder="タスク名">
+                                        @if ($errors->has('name'))
+                                            <p class="text-danger">{{ $errors->first('name') }}</p>
+                                        @endif
+                                </th>
+                                <th><input type="datetime-local" name="deadline" class="form-control"
+                                        placeholder="締め切り日">
+                                    @if ($errors->has('deadline'))
+                                        <p class="text-danger">{{ $errors->first('deadline') }}</p>
                                     @endif
-                            </th>
-                            <th><input type="datetime-local" name="deadline" class="form-control" placeholder="締め切り日">
-                                @if ($errors->has('deadline'))
-                                    <p class="text-danger">{{ $errors->first('deadline') }}</p>
-                                @endif
-                            </th>
-                            <th>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-outline-dark align-items-center"><i
-                                            class="fas fa-plus fa-lg mr-2" style="color: grey;"></i>タスクを追加</button>
-                            </th>
+                                </th>
+                                <th>
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-outline-dark align-items-center"><i
+                                                class="fas fa-plus fa-lg mr-2" style="color: grey;"></i>タスクを追加</button>
+                                </th>
+                                <th></th>
+                            </form>
                             <th></th>
-                        </form>
-                        <th></th>
-                    </tr>
-                    @if (count($tasks) > 0)
-                        @foreach ($tasks as $task)
-                            @php
-                                $today = date('Y-m-d');
-                                $deadline = new Datetime($task->deadline);
-                                $today_datetime = new Datetime($today);
-                                if (isset($task->deadline)) {
-                                    $dayDiff = $today_datetime->diff($deadline);
-                                    if ($dayDiff->invert == 1) {
-                                        $task_color = 'bg-danger';
-                                    } elseif ($dayDiff->format('%a') < 3) {
-                                        $task_color = 'bg-warning';
+                        </tr>
+                        @if (count($tasks) > 0)
+                            @foreach ($tasks as $task)
+                                @php
+                                    $today = date('Y-m-d');
+                                    $deadline = new Datetime($task->deadline);
+                                    $today_datetime = new Datetime($today);
+                                    if (isset($task->deadline)) {
+                                        $dayDiff = $today_datetime->diff($deadline);
+                                        if ($dayDiff->invert == 1) {
+                                            $task_color = 'bg-danger';
+                                        } elseif ($dayDiff->format('%a') < 3) {
+                                            $task_color = 'bg-warning';
+                                        } else {
+                                            $task_color = '';
+                                        }
                                     } else {
                                         $task_color = '';
                                     }
-                                } else {
-                                    $task_color = '';
-                                }
-                            @endphp
-                            <tr>
-                                <td>{{ $task->name }}</td>
-                                <td>{{ $task->deadline }}</td>
-                                <td>{{ $task->created_at }}</td>
-                                <td>
-                                    <form method="POST" action="/complete">
-                                        @csrf
-                                        <input type="hidden" name="id" value="{{ $task->id }}">
-                                        <button type="submit" class="btn btn-outline-success"
-                                            style="width: 100px;">完了</button>
-                                    </form>
-                                </td>
-                                <td>
-                                    <form method="POST" action="/delete">
-                                        @csrf
-                                        <input type="hidden" name="id" value="{{ $task->id }}">
-                                        <button type="submit" name="delete" class="btn btn-outline-danger"
-                                            onClick="delete_alert(event);return false;" style="width: 100px;">
-                                            削除</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                </tbody>
-            </table>
-            @endif
+                                @endphp
+                                <tr>
+                                    <td>{{ $task->name }}</td>
+                                    <td>{{ $task->deadline }}</td>
+                                    <td>{{ $task->created_at }}</td>
+                                    <td>
+                                        <form method="POST" action="/complete">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $task->id }}">
+                                            <button type="submit" class="btn btn-outline-success"
+                                                style="width: 100px;">完了</button>
+                                        </form>
+                                    </td>
+                                    <td>
+                                        <form method="POST" action="/delete">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $task->id }}">
+                                            <button type="submit" name="delete" class="btn btn-outline-danger"
+                                                onClick="delete_alert(event);return false;" style="width: 100px;">
+                                                削除</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                    </tbody>
+                </table>
+                @endif
+            </div>
         </div>
     </div>
-    </div>
-
-
-
-
 </body>
 
 </html>
